@@ -354,9 +354,8 @@ class PodstawyPobytSyncService:
             logger.info(f"      Dates order matches links: {len(new_links) == len(new_dates)}")
 
             # Check if both links and dates are in sync
-            # For links, use set comparison (order doesn't matter, duplicates shouldn't exist)
-            links_in_sync = set(current_links) == set(new_links)
-            # For dates, compare lists directly (order AND values matter)
+            # Compare lists directly (order matters for both links and dates)
+            links_in_sync = current_links == new_links
             dates_in_sync = current_dates == new_dates
 
             if links_in_sync and dates_in_sync:

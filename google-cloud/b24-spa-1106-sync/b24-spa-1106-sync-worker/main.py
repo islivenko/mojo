@@ -81,6 +81,10 @@ FIELD_SPRAWY_PROCESY = os.getenv("FIELD_SPRAWY_PROCESY", "ufCrm38_1768738413")
 FIELD_SPRAWY_PODSTAWY_DATES = os.getenv("FIELD_SPRAWY_PODSTAWY_DATES", "ufCrm38_1768738011252")
 FIELD_PODSTAWY_DATA_DO_KIEDY = os.getenv("FIELD_PODSTAWY_DATA_DO_KIEDY", "ufCrm10_1763581700754")
 
+# Additional fields for Uprawnienia do pracy sync
+FIELD_SPRAWY_PRACA_DATES = os.getenv("FIELD_SPRAWY_PRACA_DATES", "ufCrm38_1768738327769")
+FIELD_PRACA_DATA_WAZNOSCI = os.getenv("FIELD_PRACA_DATA_WAZNOSCI", "ufCrm12_1764516949310")
+
 
 def get_services():
     """Initialize Bitrix API and Sync Services."""
@@ -105,7 +109,9 @@ def get_services():
         bitrix=bitrix,
         spa_sprawy=SPA_SPRAWY,
         spa_praca=SPA_PRACA,
-        field_praca_link=FIELD_SPRAWY_PRACA
+        field_praca_link=FIELD_SPRAWY_PRACA,
+        field_praca_dates=FIELD_SPRAWY_PRACA_DATES,
+        field_praca_data_waznosci=FIELD_PRACA_DATA_WAZNOSCI
     )
 
     # Procesy legalizacyjne sync service

@@ -34,8 +34,10 @@ for field_name, field_info in fields.items():
         print()
 
 # Save to file
-with open('output/spa_1042_date_fields.json', 'w') as f:
+import os
+os.makedirs('scripts/output', exist_ok=True)
+with open('scripts/output/spa_1042_date_fields.json', 'w') as f:
     json.dump(date_fields, f, indent=2, ensure_ascii=False)
 
 print(f"\n✅ Found {len(date_fields)} date fields")
-print(f"📁 Saved to output/spa_1042_date_fields.json")
+print(f"📁 Saved to scripts/output/spa_1042_date_fields.json")
